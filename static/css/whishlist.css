@@ -1,0 +1,125 @@
+.container{
+    height: 1000px;
+    width: 1500px;
+    position: fixed;
+    background-color: #ddd;
+    align-items: center;
+    z-index: 1;
+}
+
+.inbar{
+    display: flex;
+    width: 900px;
+    height: 150px;
+    background-color: white;
+    margin-top: -10px;
+    border-bottom: 3px solid #ddd;
+
+}
+.imgbar{
+    padding-top: 10px;
+
+    margin-left: 50px;
+    width: 130px;
+    height: 120px;
+    background-color: white;
+}
+.imgbar img{
+    padding-top: 20px;
+    background-color: white;
+    margin-left: 20px;
+    width: 100px;
+    height: 100px;
+    
+}
+.detailbar{
+    /* padding-top: 30px; */
+    margin-left: 40px;
+    width: 500px;
+    height: 130px;
+    background-color: white;
+}
+.titlebar{
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 30px;
+    text-align: left;
+    justify-content: left;
+    background-color: white;
+    width:500px;
+    height: 30px;
+}
+.titlebar a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.quantitybar{
+    font-size: 17px;
+    color:rgb(95,94,94);
+    /* margin-top: 30px; */
+    text-align: left;
+    justify-content: left;
+    background-color:white;
+    width:200px;
+    height: 20px;
+}
+.pricebar{
+    font-size: 20px;
+    font-weight: 550;
+    padding-top: 10px;
+    text-align: left;
+    justify-content: left;
+    background-color: white;
+    width:500px;
+    height: 40px;
+}
+
+.btnbar{
+    display:grid;
+    /* padding-top: 30px; */
+    margin-left: 40px;
+    width: 130px;
+    height: 150px;
+    background-color: white;
+}
+.btnbar a{
+    text-decoration: none;
+    padding-top: 10px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    border: none;
+}
+.bar{
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    background-color: white;
+    width: 900px;
+    margin-left:320px;
+    margin-top: 20px;
+    
+    border-bottom: 3px solid #26a541;
+    /* margin: 10px 160; */
+}
+.tex{
+    color: rgb(95,94,94);
+    font-weight:600;
+    font-size: 22px;
+    float: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    margin-left: 50px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.mainbar{
+    margin-left:0px;
+    margin-top: 20px;
+    width: 900px;
+    background-color: white;
+    height: 800px;
+    padding-top: 10px;
+}

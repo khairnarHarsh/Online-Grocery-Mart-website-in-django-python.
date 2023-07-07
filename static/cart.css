@@ -1,0 +1,429 @@
+.container{
+    display:flex;
+    height: 40px;
+    width: 800px;
+    margin-left:10px;
+    margin-top: 10px;
+    background-color: white;
+}
+.smallcontainer{
+    margin-left: 80px;
+    display:block;
+    justify-content:space-between;
+    align-items: center;
+    background-color:#ddd;
+    height: 1000px;
+    width: 830px;
+    margin-top:0;
+    padding-top: 0;
+}
+.smallcontenor1{
+    padding-top: 0px;
+    margin-top: 0px;
+    display:block;
+    justify-content:space-between;
+    align-items: center;
+    background-color:#ddd;
+    height: 1000px;
+    width: 370px;
+    margin-left: 10px;
+}
+.pricedetail{
+    padding-top: 0;
+    margin-top: 0;
+    width: 370px;
+    height: 50px;
+    background-color:white;
+}
+.ordersummary{
+    margin-top: 2px;
+    width: 370px;
+    height: 300px;
+    background-color: white;
+}
+.con1{
+    /* margin-right: 0; */
+    display: flex;
+    background-color:white;
+    width: 600px;
+    height: 40px;
+}
+.tiquan{
+
+    display: block;
+}
+.bigcontainer{
+    margin-left:50px;
+    display:flex;
+    background-color:#ddd;
+    height: 1200px;
+    width: 1350px;
+
+    /* z-index: 1; */
+}
+.bar{
+    padding-top: 0;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    background-color: white;
+    width: 1200px;
+    margin-left:140px;
+    margin-top:0px;
+    border-bottom: 3px solid #26a541;
+    /* margin: 10px 160; */
+}
+.tex{
+    color: rgb(95,94,94);
+    font-weight:600;
+    font-size: 22px;
+    float: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    margin-left: 70px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.mainbar{
+    margin-left:10px;
+    margin-top: 15px;
+    width: 800px;
+    background-color: white;
+    height: 900px;
+    padding-top: 5px;
+}
+.container p{
+    font-size: 18px;
+    margin-left: 10px;
+    padding-top: 10px;
+    margin-top: 5px;
+
+}
+.container label{
+    width: 200px;
+    font-weight: 550;
+    font-size: 18px;
+    margin-left: 10px;
+    padding-top: 10px;
+    margin-top: 5px;
+
+}
+.container a{
+    text-decoration: underline;
+    color: #26a541;
+    font-size: 16px;
+    margin-left: 150px;
+    padding-top: 10px;
+    margin-top: 5px;
+
+}
+.product{
+    display:flex;
+    padding: 0 0;
+    margin: 0 0;
+    height: 100px;
+    width: 800px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);
+    
+}
+.iname img{
+    padding-top: 10px;
+    background-color: white;
+    margin-left: 20px;
+    width: 80px;
+    height: 80px;
+}
+.ititle {
+    font-style: Roboto,Arial,sans-serif;
+    color:black;
+    font-size: 16px;
+    height: 40px;
+    background-color: white;
+    width: 400px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.iquantity{
+    display: block;
+    width:40px;
+    height: 20px;
+    color: rgb(95,94,94);
+    font-size: 14px;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+.iprice{
+    font-weight: 550;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 5px;
+    width:60px;
+    height: 40px;
+   
+}
+.conplaceorder{
+    position: sticky;
+    display: flex;
+    padding: 0 0;
+    margin: 0 0;
+    height: 80px;
+    width: 800px;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.2);
+}
+.btn{
+    background-color: #26a541;
+
+}
+.btnn{
+    
+    font-family: Roboto,Arial,sans-serif;;
+    font-weight: 550;
+    border: none;
+    background-color:#26a541;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    width:200px;
+    height: 40px;
+    margin-left: 550px;
+}
+.iquan{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 120px;
+    height: 40px;
+    width: 130px;
+    background-color: whitesmoke;
+    /* box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.2); */
+    box-shadow: 0 0 0 0 transparent;
+    border: gray;
+}
+.minus{
+    background-color: #fff;;
+    height: 35px;
+    width: 40px;
+    border: gray;
+    border: 1px solid #ddd;
+}
+.value{
+    justify-content: center;
+    display: flex;
+    height: 35px;
+    width: 50px;
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
+}
+.value label{
+    padding-top: 7px;
+    font-size: 20px;
+    font-weight: 550;
+}
+.pluss{
+    background-color: #fff;;
+    height: 35px;
+    width: 40px;
+    border: gray;
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
+
+}
+.minus button{
+    border: none;
+    margin-left: 10px;
+    margin-top: 9px;
+    height: 20px;
+    width: 20px;
+
+}
+.pluss button{
+    border: none;
+    margin-left: 10px;
+    margin-top: 9px;
+    height: 20px;
+    width: 20px;
+
+}
+
+.pd{
+    color:rgb(95,94,94);
+    font-weight: 550;
+    height: 20px;
+    font-size: 20px;
+    padding-top: 15px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.itemmrp{
+    font-family: Roboto,Arial,sans-serif;
+    justify-content: flex-start;
+    display: flex;
+    height: 60px;
+    width: 370px;
+    background-color:white;
+}
+.mrp{
+    width: 200px;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.mrpnum{
+    justify-content: center;
+    width: 60px;
+    margin-left: 80px;
+    padding-top: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    background-color: white;
+}
+
+.itemtax{
+    font-family: Roboto,Arial,sans-serif;;
+    display: flex;
+    height: 60px;
+    width: 370px;
+    background-color:white;
+}
+.tax{
+    width: 50px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight:500;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.taxnum{
+    width: 40px;
+    justify-content: center;
+    width: 50px;
+    margin-left: 240px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    background-color: white;
+}
+
+.productdiscount{
+    font-family: Roboto,Arial,sans-serif;;
+    display:flex;
+    height: 60px;
+    width: 370px;
+    background-color:white;
+}
+.discount{
+    width: 200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.discountnum{
+    text-decoration:3px underline #26a541;
+    width: 40px;
+    justify-content: center;
+    width: 50px;
+    margin-left: 85px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    background-color: white;
+}
+
+
+
+
+
+.deliverycharge{
+    font-family: Roboto,Arial,sans-serif;;
+    display: flex;
+    height: 60px;
+    width: 370px;
+    background-color:white;
+    border-bottom: 10px dashed var(black);
+}
+.charge{
+    width: 200px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.chargenum{
+    
+    
+    width: 40px;
+    justify-content: center;
+    width: 50px;
+    margin-left: 87px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    background-color: white;
+}
+
+.ordertotal{
+    font-size: 30px;
+    box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.2);
+    display: flex;
+    font-weight: 550;
+    font-family: Roboto,Arial,sans-serif;;
+    height: 60px;
+    width: 370px;
+    background-color:white;
+    border-bottom: 1px solid var(--color-grey-grade1);
+}
+.total{
+    width: 200px;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-size: 18px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.totalnum{
+    width: 40px;
+    justify-content: center;
+    width: 50px;
+    margin-left: 87px;
+    padding-top: 15px;
+    font-size: 18px;
+    height: 40px;
+    background-color: white;
+    
+}
+.smallcontainer2{
+    margin-top: 10px;
+    width: 370px;
+    height: 40px;
+    background-color: white;
+    display:flex
+}
+.smallcontainer2 span{
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.smallcontainer2 a{
+    padding-left: 5px;
+    margin-top: 10px;
+    /* text-decoration:10px underline black; */
+}

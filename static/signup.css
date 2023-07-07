@@ -1,0 +1,288 @@
+*{
+    padding: 0;
+    margin: 0;
+   
+}
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+.search input{
+    background-color: white;
+}
+
+form {
+    margin-top: 10px;
+    height: 600px;
+    /* margin-top: 500px; */
+    justify-content: center;
+    display:flex;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px ;
+    width: 1200px;
+    margin: 60px auto;
+}
+.username1{
+    width:800px;
+    height: 120px;
+    background-color: white;
+    padding-top: 10px;
+    display: block;
+
+    
+}
+.u1{
+    margin-top: 10px;
+
+}
+
+input[type=text], input[type=password] {
+    font-size: inherit;
+    background-color: #eee;
+
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-bottom: 1px solid #e0e0e0;
+    border: none;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+.mm{
+    margin-right: 45px;
+}
+.boot{
+    display:grid;
+    height: 100px;
+    background-color: #fff;
+}
+.container2 a{
+    font-size: 15px;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #fb641b;
+    color: white;
+    padding: 14px;
+    padding-left: 120px;
+    margin-top:  10px;
+    margin-left: 7px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+}
+button{
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #fb641b;
+    color: white;
+    padding-top: 0px;
+    padding-left:  5px;
+    margin-left: 30px;
+    margin: 0px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+.bt{width: 200px;
+    margin-left: 300px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.cancelbtn {
+    width: 100px;
+    padding: 10px 18px;
+    background-color: blue;
+}
+
+.imgcontainer {
+    background-color: #fff;
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 1000px;
+    height: 520px;
+    background-color: #fff;
+    /* padding: 16px 0; */
+}
+.con {
+    margin-left: 0;
+    height: 500px;
+    width: 350px;
+    background-color: #32cd32;
+    padding: 16px 0;
+}
+
+.con img{
+    /* background-position: center 85% 20%; */
+    padding-left: 10px;
+    margin-top: 182px;
+    margin-left: 40px;
+}
+.log{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 550;
+    box-sizing: border-box;
+    color: #fff;
+    padding-left: 10px;
+}
+.log1{
+    padding-top: 15px;
+    line-height: 150%;
+    font-size: 18px;
+    font-weight: 500;
+}
+.container2 {
+    display: block;
+   
+    margin-left: 20px;
+    width: 800px;
+    height: 450px;
+    background-color:#fff;
+    padding: 16px 0;
+}
+.container1 {
+    margin-top: -50px;
+    margin-left: 100px;
+    height:50px;
+    width: 100px;
+    background-color: black;
+
+}
+.container2 label{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+span.psw {
+    float:center;
+    padding-top: 10px;
+}
+
+/* --------containt information  */
+.username{
+    margin-top: 20px;
+    display:grid;
+    justify-content:space-between 40px;
+    background-color: white;
+    padding-top: 10px;
+    display: flex;
+    margin-bottom: 0px;
+}
+.username input{
+    height: 40px;
+    margin-left: 20px;
+    width:60%;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #eee;
+}
+.username label{
+    font-size: 18px;
+    font-weight: 550;
+    background-color: white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+    font-size: 18px;
+}
+.ok{
+    margin-top: 10px;
+    background-color: white;
+    display:grid;
+    padding-top:10px;
+    height: 100px;
+}
+.ok label{
+    height:20px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 550;
+    background-color: white;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    margin-right:10px;
+
+   
+}
+.ok input[type=text], input[type=email] {
+    margin-top: 0px;
+    height: 40px;
+    width:30%;
+    margin-left: 30px;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #eee;
+}
+.m2{
+
+    margin-top:5px;
+    display: flex;
+}
+.okk{
+    background-color:white;
+    margin-left:0px;
+
+    /* margin-top: 100px; */
+    margin-top: 20px;
+    padding-top: 15px;
+    height:50px;
+    width: 300px;
+}
+.gender{
+    background-color: white;
+    font-weight: 550;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 130px;
+    display: flex;
+}
+.gender label{
+    margin-left: 7px;
+}
+.okk span{
+    
+    color: black;
+    font-size: 18px;
+    font-weight: 550;
+    background-color: white;
+    margin-left: 0px;
+    margin-top: 20px;
+    Padding-top: 20px;
+}
+
+
+@media screen and (max-width: 200px) {
+    span.psw {
+          display: flex;
+          float: none;
+    }
+
+    .cancelbtn {
+          width: 80%;
+    }
+}

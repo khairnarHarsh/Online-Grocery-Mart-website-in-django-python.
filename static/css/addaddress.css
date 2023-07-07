@@ -1,0 +1,253 @@
+* {
+
+    font-family: Arial, sans-serif;
+    /* background-color: y; */
+}
+
+body {
+    background-color: #ddd;
+    /* background-color: black; */
+}
+
+form{
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    padding-top: 20px;
+    margin-top: 20px;
+    display: flex;
+    background-color:#ddd;
+    width:1200px ;
+}
+
+
+
+.bgform{
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    border-top: #45a049;
+    display: flex;
+  
+    margin-top: 20px;
+    margin-left:180px;
+    /* justify-content:space-between; */
+    /* padding: 80px 50px; */
+    height: 705px;
+    width:1500px ;
+    background-color:#ddd;
+}
+.add{
+    margin-left: 170px;
+    font-size: larger;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.div1{
+    /* align-self: center; */
+    height: 640px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    padding:5px 20px;
+    margin-top:10px;
+    margin-left:5px;
+    width: 600px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+.div2{
+    height: 650px;
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 70px;
+    /* <!--#f5faff;--> */
+    background-color: white; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+/* .s1{
+    background-color: white;
+    padding:8px 10px;
+    width:420px;
+    height: 30px;
+    margin: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    color:green ;
+    box-shadow: -7px -7px 10px rgba(0,0,0,0.1),
+    7px 7px 10px rgba(0,0,0,0.1);
+    border-radius: 2px;
+} */
+.n{
+    height: 45px;
+}
+.form{
+    padding-top: 500px;
+    margin-left: 10px;
+    padding-left: 10px;
+    /* background-color: #45a049; */
+    width: 50px;
+    height:600px;
+
+}
+
+input[type="text"], select, textarea {
+    height: 30px;
+    background-color: #ddd;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    padding-bottom: 12px;
+    padding-top: 0;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+    padding: 20px 16px 10 13px;
+    /* box-shadow: none;  */
+
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+}
+.card-body{
+    text-align:left;
+    width: 350px;
+    /* margin-left: 20px; */
+    /* background-color: #4CAF50; */
+}
+.l label {
+    padding-bottom: 0%;
+    padding-top: 5%;
+    color: var(--color-grey-grade4);
+    position:relative;
+    transform-origin: top left;
+    transition: transform .2s ease;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.div2 img{
+
+    padding:0px 0px;
+    margin-top: 85px;
+    margin-left: 160px;
+
+}
+/* .div2 img{
+       margin-left: 60px;
+} */
+.div2 h5{
+
+    margin-top: 10px;
+    font-size: larger;
+    padding-left: 70px;
+    margin-left: 80px;
+}
+.div2 h6{
+    margin-top: 8px;
+    font-size:13px;
+    padding-left: 70px;
+}
+.div2 p{
+    margin-top: 10px;
+    padding-top: 0px;
+    font-size: 13px;
+}
+.btm1{
+    text-align: right;
+   
+    color: black;
+    display: flex;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 20px;
+    padding: 20px 0px;
+    padding-left: 160px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.btn1{
+    width: 200px;
+    /* justify-content:center; */
+    /* display:flex; */
+    margin-top: 50px;
+}
+.btm1:hover{
+    text-decoration: none;
+    color:white;
+    background-color: orangered;
+}
+.p {
+   font-size: 10px;
+   margin-left: 300px;
+   padding-top: 0px;
+   margin-top: 0px;
+   padding-left: 0;
+} 
+
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+    background-color: #eee; 
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+} */
+.btn2{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 20px;
+
+
+}
+.can{
+    width: 100px;
+    background-color: red;
+    font-weight: 500;
+    color: white;
+    /* background-color: transparent; */
+    border: none;
+    margin-left: 0px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.save{
+    margin-right: 0;
+    padding-right: 0;
+    color: white;
+    height: 48px;
+    width: 230px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #2874f0;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: box-shadow .2s ease;
+    vertical-align: super;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.3);
+    border: 1px solid #e0e0e0;
+}
+.save:hover{
+    background-color: white;
+    color: black;
+}
+/* 
+.container > div {
+    flex: 1 1 300px;
+    margin: 10px;
+} */
