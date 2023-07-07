@@ -1,0 +1,84 @@
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+<title>Signup</title>
+<link rel="stylesheet" href="{% static 'signup.css'%}">
+
+<form method="POST" name='signup' enctype="multipart/form-data">
+	{% csrf_token %}
+
+	<div class="con">
+		<a class="log">Create Account</a>
+		<p class="log log1"><span>Looks like you're new here ! Create a account and start the shopping.</span></p>
+		<img class="im" src="{% static 'shopping.png'%}" width="200px" height="190px">
+	</div>
+	<div class="container">
+		<div class="container2">
+			<div class="username1">
+
+				<div class="u1">
+					<label for="username" class="mm"><b>User Name:</b></label>
+					<input autocomplete="off" type="text" placeholder="Enter User name" name="username"
+						id="username" required>
+				</div>
+				<div class="u1">
+					<label for="password"><b>Create Password:</b></label>
+					<input id="password" autocomplete="off" type="text" placeholder="Enter Password" name="password"
+						required>
+				</div>
+			</div>
+			<!-- <div class="boot">
+				<button type="submit">Continue</button>
+				<a href="/login">Login</a> -->
+
+			<div class="username">
+				<div>
+					<label for="firstname">Firstname:</label>
+					<input value="    " type="text" id="firstname" name="firstname"placeholder="First name" required tabindec="1"><br>
+				</div>
+				<div>
+					<label for="lastname">Last name:</label>
+					<input value="    " type="text" id="lastname" name="lastname" placeholder="Last name"required><br>
+				</div>
+			</div>
+
+			<div class="ok">
+				<div class="m2">
+					<label for="mobilenumber">Mobile Number:</label>
+					<input value="    " type="text" id="mobilenumber" placeholder="Number"name="mobilenumber" required><br>
+				</div>
+				<div class="m2">
+					<label for="email">Email:</label>
+					<input value="    " type="email" id="email" placeholder="Enter email"name="email" required><br>
+				</div>
+			</div>
+
+			<div class=" okk">
+				<div class="g"> <span> Your Gender:</span></div>
+
+				<div class="gender">
+					<input type="radio" id="male" name="gender" value='Male' required><br>
+					<label for="male"> Male</label><br>
+				</div>
+				<div class="gender">
+					<input type="radio" id="female" name="gender" value='Female' required><br>
+					<label for="female"> Female</label><br>
+				</div>
+			</div>
+			<div class='bt'>
+				<button type="submit">Create</button>
+
+			</div>
+			<!-- <div class="container1" style="background-color:black">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<span class="psw">Forgot password?</span>
+			</div> -->
+
+		</div>
+	</div>
+
+	
+	</div>
+</form>
+{% endblock body %}

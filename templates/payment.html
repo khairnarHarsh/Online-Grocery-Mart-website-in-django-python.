@@ -1,0 +1,83 @@
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+
+<head>
+	<title>Payment Page Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/payment.css'%}">
+</head>
+
+<div class="mainscreen">
+    <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">--> 
+      <div class="card">
+        <div class="leftside">
+          <div class="order_price">
+            <div class="pricedetail">
+              <div class="pd"><a>Order Summary</a></div>
+          </div>
+           
+            <div class="price">
+              <p>Order price:</p>
+              <p>Rs.{{request.GET.total|floatformat:2}}</p>
+            </div>
+            <div class="price">
+              <p>Applied Discount:</p>
+              <p>Rs.{{request.GET.deduction|floatformat:2}}</p>
+            </div>
+            <div class="price">
+              <p>Tax:</p>
+              <p>0.00</p>
+            </div>
+            <div class="price">
+              <p>Shipping Charges:</p>
+              <p>0.00</p>
+            </div>
+            <br />
+            <hr />
+            <div class="total_price">
+              <p class="dark">Total:</p>
+              <p class="dark">Rs.{{request.GET.discounted|floatformat:2}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="rightside">
+            <form action="" method="post">
+                {% csrf_token %}
+            <h1>CheckOut</h1>
+            <h2>Payment Information</h2>
+            <p>Cardholder Name</p>
+            <input type="text" class="inputbox" name="name" required />
+            <p>Card Number</p>
+            <input type="number" class="inputbox" name="card_number" id="card_number" required />
+
+            <p>Card Type</p>
+            <select class="inputbox" name="card_type" id="card_type" required>
+              <option value="">--Select a Card Type--</option>
+              <option value="Visa">Visa</option>
+              <option value="RuPay">RuPay</option>
+              <option value="MasterCard">MasterCard</option>
+            </select>
+<div class="expcvv">
+
+            <p class="expcvv_text">Expiry</p>
+            <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+
+            <p class="expcvv_text2">CVV</p>
+            <input type="password" class="inputbox" name="cvv" id="cvv" required />
+        </div>
+            <p></p>
+            <button type="submit" class="button">Confirm Order</button>
+            {% comment %} <a href="/pdf_report_create">download</a> {% endcomment %}
+          </form>
+        </div>
+      </div>
+    </div>
+</form>
+  
+
+
+{% endblock body %}
+

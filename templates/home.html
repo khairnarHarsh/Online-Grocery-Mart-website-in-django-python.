@@ -1,0 +1,94 @@
+{% extends "navigation.html" %}
+{% load static%}
+{% load static custom_tags %}
+{% block body %}
+<title>Grocery Mart</title>
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<div class="m">
+
+    <section class="categorynavbar">
+        {% for i in allcategory %}
+        <a href="{% url 'user_product' i.id %}">
+        <div class="topcatogary">
+            {% comment %} href="{% url 'user_product' i.id %}"  {% endcomment %}
+            <img src="{{i.image.url}}">
+            <a href="{% url 'user_product' i.id %}"> {{i.name}}</a>
+        </div>
+        </a>
+        {% endfor %}
+
+</div>
+</section>
+
+
+</div>
+</div>
+<!--category section complete-->
+<!--product section -->
+<div href="/product-detail/{{j.id}}/" class="products" >
+    {% comment %} <h2>Products:- </h2> {% endcomment %}
+    <div class="hori">
+        {% for j in product %}
+        <a href="/product-detail/{{j.id}}/">
+        <div class="product">
+            <div class="pimage" >
+                <img  href="/product-detail/{{j.id}}/" src="{{j.image.url}}" width="100px" height="100px">
+        
+            </div>
+            <div class="ptitle">
+                <a href="/product-detail/{{j.id}}/" >{{j.name}}</a>
+            
+            </div>
+            <div class="pprice">
+                {% comment %} <a>₹{{j.price}}
+                </a> {% endcomment %}
+                <a >Rs.
+                <del>{{j.price}}</del>
+                {{j.id|applydiscount}}
+                </a>
+            </div>
+            <div class="quatityandadditem">
+        
+                <div href="" class="quantity">
+                    <a href="">{{j.quantity}}</a>
+                    <a href=""><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+                {% comment %} add-to-cart {% endcomment %}
+                
+                <a><div class="additem ">
+                    {% if  request.user.is_authenticated %}
+                        <a href="/add-to-cart/{{j.id}}/">Add item</a>
+                    {% else %}
+                        <a>Add item</a>
+                    {% endif %}
+                    
+                        {% comment %} <a  href="/add-to-cart/{{j.id}}/;"class="button">
+                            <span>Add to cart</span>
+                            <div class="cart">
+                                <svg viewBox="0 0 36 26">
+                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                </svg>
+                            </div>
+                        </a> {% endcomment %}
+                </div></a>
+               
+            </div>
+        </div>
+        </a>
+        
+        {% endfor %}
+        
+        
+        
+    </div>
+    {% comment %} <div class="shopping-cart" data-product-count="0">
+        <span class="cart-icon">&#128722</span>
+    </div> {% endcomment %}
+    
+
+  
+</div>
+<script src="{% static 'js/home.js'%}"></script>
+
+{% endblock body %}

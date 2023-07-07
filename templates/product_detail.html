@@ -1,0 +1,154 @@
+{% extends "navigation.html" %}
+{% load static%}
+{% load static custom_tags %}
+
+{% block body %}
+<title>Grocery Mart</title>
+<link rel="stylesheet" href="{% static 'css/product-detail.css'%}">
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+
+<form>
+   <div class="container">
+       {% comment %} <div class="incontainer"> {% endcomment %}
+       <div class="bar">
+           <div class="tex">
+               <a>Product Detail</a>
+           </div>
+           <div class="mainbar">
+        
+            <div class='it'>
+                <div class="imgdiv" class="picZoomer">
+                    <img class="my_img" src="{{product.image.url}}" alt="Grocery images" height="300px" width='300px'>
+               </div>
+               <div class="prdetail">
+                  <div class="ddiv">
+                    <div class="pptitle"> 
+                        <a>{{product.name}}</a>
+                    </div>
+                    {% comment %} <div class="pwish">
+                        <img src="{% static 'whishlist.png'%}" width="30px" height="30px">
+                    </div> {% endcomment %}
+                </div>
+                <div class="mrpdiv">
+                        <span> M.R.P. : <i class="fa fa-inr"></i> <del> {{product.price}}  </del>   </span>
+                        <span class="price"> Rs. {{product.id|applydiscount}} </span>
+                </div>
+                <div class="quan">
+                    <span>Add Quantity :- </span>
+                    <span class="pluss">{{product.quantity}}</span>
+                    {% comment %} <div class="value-button decrease_" id="number" value="Decrease Value">-</div>
+                        <input type="number" name="qty" id="number" value="1" />
+                    <div class="value-button increase_" id="number" value="Increase Value">+</div> {% endcomment %}
+                    {% comment %} <div class="iquan">
+                        <div class="minus" class="value-button decrease_" value="Decrease Value" id="">
+                            <img src="{% static 'minus.png' %}" height="15px" width="15px"></button>
+                        </div>
+                        <div class="value">
+                            <input type="number" name="qty" id="number" value="1" />
+                        </div>
+                        <div class="pluss" class="value-button increase_" value="Increase Value" id="">
+                            <img src="{% static 'pluss.png' %}" height="15px" width="15px"></button> 
+                        </div>
+                       
+
+                    </div> {% endcomment %}
+                </div>
+                <div class="pdesc">
+                    <span>About this product:- </span>
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="ai">
+                <button class="additems" tabindex="0">
+                    <a href="/add-to-cart/{{product.id}}/"> Add to Cart</a>
+                    </button>
+
+                <button class="addwhish" tabindex="0">
+                    <a href="/add-to-whishlist/{{product.id}}/">Add to Whishlist</a>
+                    </button>
+
+               </div>
+            </div>
+             
+            </div>
+            <div class="suggestion">
+                <div class="labels">Suggested for you :-</div>
+                <div class="sugdiv">
+                    {% for m in latest_product %}
+                    <a href="/product-detail/{{m.id}}/">
+                    <div class="product ">
+                        <div class="pimage">
+                            <img  href="/product-detail/{{m.id}}/" src="{{m.image.url}}" width="100px" height="100px">
+                    
+                        </div>
+                        <div class="ptitle">
+                            <a href="/product-detail/{{m.id}}/" >{{m.name}}</a>
+                        
+                        </div>
+                        <div class="pprice">
+                            <a>₹{{m.price}}</a>
+                        </div>
+                        <div class="quatityandadditem">
+                    
+                            <div href="" class="quantity">
+                                <a href="">{{m.quantity}}</a>
+                                <a href=""><i class="fa-solid fa-angle-down"></i></a>
+                            </div>
+                            <div class="additem">
+                                <a href="/add-to-cart/{{m.id}}/">Add item</a>
+                    
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+
+
+                </div>
+            
+            </div>
+            
+           
+       </div>
+   </div>
+
+
+
+   {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script> {% endcomment %}
+   <script src="{% static 'js/product-detail.js' %}"></script>
+   <script>
+    $(".decrease_").click(function () {
+        decreaseValue(this);
+      });
+      $(".increase_").click(function () {
+        increaseValue(this);
+      });
+      function increaseValue(_this) {
+        var value = parseInt($(_this).siblings("input#number").val(), 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        $(_this).siblings("input#number").val(value);
+      }
+    
+      function decreaseValue(_this) {
+        var value = parseInt($(_this).siblings("input#number").val(), 10);
+        value = isNaN(value) ? 0 : value;
+        value < 1 ? (value = 1) : "";
+        value--;
+        $(_this).siblings("input#number").val(value);
+      }
+   </script>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

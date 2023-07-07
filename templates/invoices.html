@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static custom_tags %}
+{% load static%}
+{% load static custom_tags %}
+<html>
+	<style>  
+		h1{
+			margin-left:340px;
+			color:black;
+		
+		}
+		div {  
+			  {% comment %} border: 3px solid blue;   {% endcomment %}
+			  padding-top: 10px;  
+			  {% comment %} background-color: yellow;   {% endcomment %}
+			} 
+		.invoice_header{
+			background-color:green;
+		}
+		.logo_container a{
+			color:white;
+			font-style:Italic;
+			text-decoration:none;
+			font-weight: 600;
+			margin-left:50px;
+			margin-top:10px;
+
+			font-size:35px
+		}
+	</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GroceryMartInvoice</title>
+	{% comment %} <link rel="stylesheet" type="text/css" href="css/style.css"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{% static 'css/invoices.css'%}"> {% endcomment %}
+</head>
+<body>
+	<div class="invoice_container">
+		<div class="invoice_header">
+			<div class="logo_container">
+				<img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/grocery-logo_fb537a.svg" height="50px">
+				<a>Mart</a>
+				{% comment %} <p>
+					exlusive
+					<span class="plus-color">products</span>
+					<img src="{% static 'plus.png'%}" width="12px" height="12px">
+				</p> {% endcomment %}
+			</div>
+		</div>
+		<h1 class="in_head "><td>INVOICE</b></td></h1>
+		<div class="customer_container">
+			<div>
+				<h2>Billing To/Shipping To </h2>
+				<h4>{{user.fullname}}</h4>
+				<p>
+					{{user.address}}, <br>
+					{{user.city}}-{{user.pincode}}. <br>
+					{{user.states}},<br>
+					{{user.mobile}},<br>
+					{{user.user.email}}.<br>
+				</p>
+			</div>
+			<div class="in_details">
+				
+				<table>
+					<tr>
+						<td>Due Date:   <b>{{order.created}}</b></td>
+					</tr>
+					<tr>
+						<td>Bill No:    <b># {{order.id}}</b></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div  class="product_container">
+			<table class="item_table" border="1" cellspacing="0">
+				<tr style="padding:2px">
+					<th>Product Id</th>
+					<th>Product Name</th>
+					<th>Product Price</th>
+					<th>Product Qty</th>
+
+					<th>Total</th>
+				</tr>
+				{% for i, j in product.items %}
+				<tr >
+					
+						<td type="Number" style="padding:2px" align="center">{{i}}</td>
+						<td style="padding:2px"align="center">{{i|productname}} ({{i|productquan}})</td>
+						<td style="padding:2px"align="center">{{i|productprice}}</td>
+						<td style="padding:2px"align="center">{{j}}</td>
+						<td style="padding:2px"align="center">{% producttotalprice i j %}</td>
+					
+				</tr>
+				{% endfor%}
+				<tr style="padding:2px">
+					<th colspan="2"></th>
+					<th colspan="2">Total</th>
+					
+					<th>Rs. {{order.total|floatformat:2}}</th>
+					
+					
+				</tr>
+			</table>
+		</div>
+		<div class="invoice_footer">
+			<div class="note">
+				<h2>Thank You! For buying product from 'Grocery Mart'.</h2>
+				<p>
+	
+				</p>
+			</div>
+			<div class="invoice_footer_amount">
+				<table class="amount_table"   cellspacing="0">
+					<tr>
+						<td>Tax amount     <b>: -</b></td>
+					</tr>
+					<tr>
+						<td>Grand Total     <b>:Rs. {{order.total|floatformat:2}}</b></td>
+					</tr>
+					<tr>
+						<td>Paid amount     <b>:Rs. {{order.total|floatformat:2}}</b></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>   

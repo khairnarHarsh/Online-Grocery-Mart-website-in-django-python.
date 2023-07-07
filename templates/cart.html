@@ -1,0 +1,141 @@
+{% extends "navigation.html"%}
+{% load static%}
+{% load static custom_tags %}
+
+{% block body %}
+<title>Cart</title>
+<link rel="stylesheet" href="{% static 'css/cart.css'%}">
+{% comment %} <link rel="stylesheet" href="{% static 'home.css'%}"> {% endcomment %}
+{% load static%}
+
+
+<div>
+        
+    <a href="/emptycart">Emptycart</a>
+    <!--bar-->
+    <!--main cart-->
+
+
+
+    <div class="bar">
+        <div class="tex">
+            <a>Grocery Cart</a>
+        </div>
+    </div>
+    <div class="bigcontainer">
+        
+        <div class="smallcontainer">
+            <div class="container">
+                <div class="con1">
+                    <p>Deliver to :- </p>
+                    <label>{{data.city}}-{{data.pincode}}</label>
+                </div>
+
+                <a  href="/addaddress">Edit</a>
+                <i class="fa-regular fa-pen"></i>
+
+            </div>
+            <div class="mainbar">
+                <div class="aaa">
+                {% for i, j in products.items %}
+                
+                    <div class="product">
+                        <div class="iname">
+                            <img src="{{i|productimage}}">
+                        </div>
+                        <div class="tiqun">
+
+                            <div class='ititle'>
+                                <a href="/product-detail/{{i}}/">{{i|productname}}</a>
+                                {% comment %} <a href="/product-detail/{{i}}/">{{i|productname}}</a> {% endcomment %}
+                            </div>
+                            <div class="iquantity">
+                                <p readonly>{{i|productquan}}</p>
+                            </div>
+                            <div class="iprice">
+                                {% comment %} <p>₹{{i|productprice}}</p> {% endcomment %}
+                                <p readonly>{{i|applydiscount}}</p>
+                            </div>
+                        </div>
+                        <div class="iquan">
+                            <div class="minus">
+                                <a  href="/incredecre/{{i}}/?action=decre"><img src="{% static 'minus.png' %}" height="15px" width="15px" id="decrebtn-{{forloop.counter}}"></a>
+                            </div>
+                            <div class="value">
+                                <input type="text" id="shop_qty-{{forloop.counter}}" name="qtybutton" value="{{j}}" readonly>1</input>
+                            </div>
+                            <div class="pluss">
+                                <a href="/incredecre/{{i}}/?action=incre"><img src="{% static 'pluss.png' %}" height="15px" width="15px"></a>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                <div class="conplaceorder">
+                    {% comment %} <button class="btnn " type="button">PLACE ORDER</button> {% endcomment %}
+                    <a  href="/booking/" class="btnn " type="button">PLACE ORDER</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="smallcontenor1">
+            <div class="pricedetail">
+                <div class="pd"><a>Order Summary</a></div>
+            </div>
+           
+            <div class="ordersummary">
+                {% for i, j in products.items %}
+            
+                <div class="itemmrp">
+                    
+                    <div class="mrp">
+                        <label>{{i|productname}}</label>
+                    </div>
+                    <div class="mrpnum">
+                        {% comment %} {% for i, j in product.items %} {% endcomment %}
+                        {% comment %} <label  id="totalprice-{{forloop.counter}}">{{i|productname}}</label> {% endcomment %}
+                        <label  id="totalprice-{{forloop.counter}}">₹ {%producttotalprice i j%}</label>
+                        {% comment %} <label>{{total}}  </label>  {% endcomment %}
+                        
+                        
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                </div>
+                {% comment %} <div class="smallcontainer2">
+                    <span>Delivery estimate :-</span>
+                    <a>________________</a>
+                </div> {% endcomment %}
+            </div>
+        
+         {% comment %} <div class="smallcontainer2">
+            <span>Delivery estimate :-</span>
+            <a>________________</a>
+        </div>  {% endcomment %}
+    </div>
+    
+        
+        
+     
+    
+
+        
+
+
+
+
+    
+</div>
+ <script>
+    var prolenth = '{{lengthpro}}';
+    var mytotal = 0;
+    for(var i=1;i<=prolenth*1;i++){
+        totalprice = parseFloat(document.getElementById('totalprice-'+i).innerHTML);
+        var mytotal = parseFloat(mytotal) + (totalprice);
+    }
+    document.getElementById('total-price').innerHTML  = mytotal;
+</script>{% endblock body %}

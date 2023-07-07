@@ -1,0 +1,78 @@
+{% extends "navigation.html"%}
+{% load static%}
+{% load static custom_tags %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/booking.css'%}">
+<form method="post" name="booking">
+{% csrf_token %}
+<div class="personalinfo">
+    <h3 class="p-4" style="border-bottom: 2px solid orange;color:green">Confirm Booking Detail</h3>
+    <div class="container2">
+        <div class="username1">
+
+            <div class="u1">
+                <label for="username" class="mm"><b>Name:</b></label>
+                <input autocomplete="off" type="text" placeholder="" name="username"
+                    id="username" value="{{user.fullname}}" readonly>
+            </div>
+            <div class="u1">
+                <label for="email"><b>Email:</b></label>
+                <input id="email" value="{{user.user.email}}"autocomplete="off" type="text"  name="email" readonly>
+            </div>
+        </div>
+        <!-- <div class="boot">
+            <button type="submit">Continue</button>
+            <a href="/login">Login</a> -->
+
+        <div class="username">
+            <div>
+                <label for="state">State:</label>
+                <input value="{{user.states}}"  type="text" id="state" name="state"  tabindec="1" readonly><br>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input value="{{user.city}}" type="text" id="city" name="city" readonly><br>
+            </div>
+            <div >
+                <label for="pincode">Pincode:</label>
+                <input value="{{user.pincode}}"type="text" id="pincode" name="pincode" readonly><br>
+            </div>
+        </div>
+
+        <div class="ok">
+            <div class="m2">
+                <label for="mobilenumber">Mobile Number:</label>
+                <input value="{{user.mobile}}" type="text" id="mobilenumber" name="mobilenumber" readonly><br>
+            </div>
+        </div>
+        <div class="ok1">
+            <div class="m2">
+                <label for="address">Address:</label>
+                <input class="m22"value="{{user.address}}"type="textfield" id="address" name="address" readonly><br>
+            </div>
+        </div>
+
+        <div class=" okk">
+            <div class="g"> <span>Total Price(Rs.):</span></div>
+            {% comment %} <input value="{{data.user.gender}}"type="email" id="email" name="email" required><br> {% endcomment %}
+            <div class="aa" ><span style="margin-top: 10px" style="margin-left: 20px;">{{discounted|floatformat:2}}</span></div>
+            <div class='bt'>
+                <button type="submit">Confirm</button>
+    
+            </div>
+        
+        </div>
+        
+        
+        <!-- <div class="container1" style="background-color:black">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot password?</span>
+        </div> -->
+
+    </div>
+</div>
+</form>
+
+
+{% endblock body %}

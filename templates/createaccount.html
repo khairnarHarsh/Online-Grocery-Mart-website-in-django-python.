@@ -1,0 +1,116 @@
+
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+<title>Personal information</title>
+<link rel="stylesheet" href="{% static 'createaccount.css'%}">
+<form method="POST" name='personalinfo' enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="proandbut">
+		<div class="profile">
+			
+			<div class="imgcontainer">
+				{% if data.gender == "Male"%}
+					<img src="{% static 'profile1.png'%}" width="80px" height="80px">
+				{% else%}
+					<img src="{% static 'profile2.jpg'%}" width="80px" height="80px">
+				{% endif %}
+			</div>
+			<div class="text">
+				<a>Hello,</a>
+				<span>{{data.user.first_name}}{{data.user.last_name}}</span>
+			</div>
+		</div>
+		<div class="buttons">
+			<div class="account">
+				<div class="accountsetting">
+					<img src="{% static 'profile1.png'%}" width="25px" height="25px">
+					<p>Account Setting</p>
+				</div>
+				<label class="an" href="/addaddress">Personal Information</label>
+				<a href="/addaddress">Manage Address</a>
+			</div>
+			<div class="myorder">
+				<img src="{% static 'myorder.png'%}" width="35px" height="35px">
+				<a href="/myorderlist">My Orders</a>
+			</div>
+			<div class="myorder">
+				<img src="{% static 'whishlist.png'%}" width="30px" height="30px">
+				<a href="/wishlist">My Whishlist</a>
+			</div>
+			<div class="myorder">
+				<img src="{% static 'logout.png'%}" width="35px" height="35px">
+				<a href="">About</a>
+			</div>
+			<div class="myorder">
+				<img src="{% static 'logout.png'%}" width="35px" height="35px">
+				<a href="/logouts">Logout</a>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="personalinfo">
+
+		<div class="container2">
+			<div class="username1">
+
+				<div class="u1">
+					<label for="username" class="mm"><b>User Name:</b></label>
+					<input autocomplete="off" type="text" placeholder="" name="username"
+						id="username" value="{{data.user.username}}" required>
+				</div>
+				<div class="u1">
+					<label for="password"><b>Password:</b></label>
+					<input id="password" value=""autocomplete="off" type="text" placeholder="Change Password" name="password"
+						>
+				</div>
+			</div>
+			<!-- <div class="boot">
+				<button type="submit">Continue</button>
+				<a href="/login">Login</a> -->
+
+			<div class="username">
+				<div>
+					<label for="firstname">Firstname:</label>
+					<input value="{{data.user.first_name}}" type="text" id="firstname" name="firstname" required tabindec="1"><br>
+				</div>
+				<div>
+					<label for="lastname">Last name:</label>
+					<input value="{{data.user.last_name}}" type="text" id="lastname" name="lastname" required><br>
+				</div>
+			</div>
+
+			<div class="ok">
+				<div class="m2">
+					<label for="mobilenumber">Mobile Number:</label>
+					<input value="{{data.mobile}}" type="text" id="mobilenumber" name="mobilenumber" required><br>
+				</div>
+				<div class="m2">
+					<label for="email">Email:</label>
+					<input value="{{data.user.email}}"type="email" id="email" name="email" required><br>
+				</div>
+			</div>
+
+			<div class=" okk">
+				<div class="g"> <span> Your Gender:</span></div>
+				{% comment %} <input value="{{data.user.gender}}"type="email" id="email" name="email" required><br> {% endcomment %}
+				<div class="aa" ><span style="margin-top: 10px" style="margin-left: 20px;">{{data.gender}}</span></div>
+			
+			</div>
+			<div class='bt'>
+				<button type="submit">Save</button>
+
+			</div>
+			
+			<!-- <div class="container1" style="background-color:black">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<span class="psw">Forgot password?</span>
+			</div> -->
+
+		</div>
+	</div>
+</form>
+{% endblock body %}

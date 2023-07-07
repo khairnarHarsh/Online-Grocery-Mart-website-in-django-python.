@@ -1,0 +1,27 @@
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+<title>Empty cart</title>
+<link rel="stylesheet" href="{% static  'emptycart.css'%}">
+
+<div class="container">
+    <div class="incontainer">
+    <div class="bar">
+        <div class="tex">
+            <a>Grocery Cart</a>
+        </div>
+        <div class="mainbar">
+            <div class="img">
+                <img src="{% static 'emptycart.png' %}"width="400px" height="300px"> 
+            </div>
+            <div class="t">
+                <a>Your Cart is Empty</a>
+            </div>
+            <div class="t1">
+                <a href="/home">Shop Now</a>
+            </div>
+
+        </div> 
+    </div>
+</div>{% endblock body %}

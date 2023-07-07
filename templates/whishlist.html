@@ -1,0 +1,97 @@
+{% extends "navigation.html"%}
+{% load static%}
+{% load static custom_tags %}
+{% block body %}
+<title>whishlist</title>
+<link rel="stylesheet" href="{% static 'css/whishlist.css'%}">
+
+
+
+<form>
+    <div class="container">
+        {% comment %} <div class="incontainer"> {% endcomment %}
+        <div class="bar">
+            <div class="tex">
+                <a>Whishlist</a>
+            </div>
+            <div class="mainbar">
+                {% for i, j in product.items %}
+                <div class="inbar">
+                    <div class="imgbar">
+                        <img src="{{i|productimage}}">
+                    </div>
+                    <div class=" detailbar">
+                        <div class="titlebar">
+                            <a href="/product-detail/{{i}}/">{{i|productname}}</a>
+                        </div>
+                        <div class='quantitybar'>
+                            <span>{{i|productquan}}</span>
+                        </div>
+                        <div class="pricebar">
+                            <a>{{i|applydiscount}}</a>
+                        </div>
+                    </div>
+                    
+                    <div class="btnbar">
+                        <a href="/wishdeletecart/{{i}}/" style="background:#2874f0">Remove</a>
+                        <a href="/add-to-cart/{{i}}/"style="background:#26a541">Add to cart</a>
+
+                    </div>
+                </div>
+                {% endfor %} 
+                
+    
+            </div> 
+        </div>
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

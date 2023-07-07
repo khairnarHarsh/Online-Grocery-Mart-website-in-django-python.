@@ -1,0 +1,61 @@
+{% extends "navigation.html"%}
+{% load static%}
+{% load static custom_tags %}
+{% block body %}
+<title>Myorderlist</title>
+<link rel="stylesheet" href="{% static 'css/myorderlist.css'%}">
+    
+
+
+
+<form>
+    <div class="container">
+        {% comment %} <div class="incontainer"> {% endcomment %}
+        <div class="bar">
+            <div class="tex">
+                <a>Order History</a>
+            </div>
+            <div class="mainbar">
+                <table class="t1" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>BookingID</th>
+                        <th>TotalPrice</th>
+                        <th>Status</th>
+                        <th>CreationDate</th>
+                        <th>Action</th>
+                        <th>Invoices<th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in order %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.id}}</td>
+                        <td>{{i.total|floatformat:2}}</td>
+                        <td><a href="/user-order-track/{{i.id}}/" class="statuss" title="Track Status">{{i.get_status_display}}</a></td>
+                        <td>{{i.created}}</td>
+                        {% comment %} <td></td> {% endcomment %}
+                        <td>
+                            {% if i.status < 4 %}
+                                <a href="/change-order-status/{{i.id}}/?status=5" class="btn btn-success" title="Cancel Order"><img src="{% static 'cancel.jpg'%}" width="30px" height="30px"></a>
+                            {% endif %}
+                            {% if i.status == 4 %}
+                                <a href="/change-order-status/{{i.id}}/?status=6" class="btn btn-danger" title="Return Order"><img src="{% static 'return.jpg'%}" width="30px" height="30px"></a>
+                            {% endif %}
+                            {% if i.status == 5 or i.status == 6 %}
+                                -----
+                            {% endif %}
+                        </td>
+                        <td ><a href="/pdf_report_create/{{i.id}}/">Print</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </div>
+
+</form>
+{% endblock body %}

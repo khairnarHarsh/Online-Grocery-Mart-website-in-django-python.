@@ -1,0 +1,41 @@
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+
+
+<title>Login Form</title>
+<link rel="stylesheet" href="{% static 'login.css'%}">
+<form method="POST" name="login">
+	{% csrf_token %}
+
+
+	<div class="con" >
+		<a class="log">Login</a>
+		<p class="log log1"><span>Get access to your Orders,
+				Wishlist and Recommendations.</span></p>
+		<img class="im" src="{% static 'shopping.png'%}" width="120px" height="110px">
+	</div>
+	<div class="container">
+		<div class="container2">
+			<label for="username"><b>User Name</b></label>
+			<input autocomplete="off" type="text" placeholder="Enter Mobile Number" name="username" required>
+
+			<label for="password"><b>Password</b></label>
+			<input autocomplete="off" type="password" placeholder="Enter Password" name="password" required>
+
+			<button type="submit">Login</button>
+			<label>
+				<input type="checkbox" checked="checked" name="remember"> Remember me
+			</label>
+		</div>
+
+		<div class="container1" >
+			<button type="button" class="cancelbtn">Cancel</button>
+			<a href="/signup" class="lab">Create Account</a>
+			<!-- {% comment %} <span class="psw">Forgot password?</span> {% endcomment %} -->
+
+		</div>
+	</div>
+
+</form>{% endblock body %}

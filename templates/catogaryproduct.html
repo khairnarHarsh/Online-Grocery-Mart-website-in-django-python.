@@ -1,0 +1,46 @@
+{% extends "navigation.html" %}
+{% load static%}
+{% block body %}
+{% load static custom_tags %}
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+
+<div class="products" >
+    <div class="hori">
+{% for k in product %}
+<a href="/product-detail/{{k.id}}/">
+<div class="product">
+    <div class="pimage">
+        <img src="{{k.image.url}}" width="100px" height="100px">
+
+    </div>
+    <div class="ptitle">
+        <a >{{k.name}}</a>
+    
+    </div>
+    <div class="pprice">
+        <div class="mrpdiv">
+            <span> M.R.P. : <i class="fa fa-inr"></i> <del> {{k.price}}  </del>   </span>
+            <span class="price"> Rs. {{k.id|applydiscount}} </span>
+         </div>
+        {% comment %} <a>₹{{k.price}}</a> {% endcomment %}
+    </div>
+    <div class="quatityandadditem">
+
+        <div href="" class="quantity">
+            <a href="">{{k.quantity}}</a>
+            <a href=""><i class="fa-solid fa-angle-down"></i></a>
+        </div>
+        <div class="additem">
+            <a href="/add-to-cart/{{k.id}}/">Add item</a>
+
+        </div>
+    </div>
+</div>
+</a>
+{% endfor %}
+</div>
+</div>
+
+
+
+{% endblock body %}

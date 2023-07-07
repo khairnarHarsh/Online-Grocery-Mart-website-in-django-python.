@@ -1,0 +1,108 @@
+{% extends "navigation.html"%}
+{% load static%}
+
+{% block body %}
+<title>Grocery Mart</title>
+<link rel="stylesheet" href="{% static 'css/addaddress.css'%}">
+<div>
+	<div class="bgform">
+
+		<!-- <label class="add">Add a Address</label> -->
+		
+		<form method="POST" name="addaddress" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="div2">
+				<div class="card" style="width: 300px;">
+					{% if data.gender == "Male"%}
+						<img src="{% static 'profile1.png'%}" width="80px" height="80px">
+					{% else%}
+						<img src="{% static 'profile2.jpg'%}" width="80px" height="80px">
+					{% endif %}
+					<div class="card-body">
+						<h5 class="card-title">Hii, {{data.fullname}}</h5>
+						<h5 class="card-title">+91 {{data.mobile}}</h5>
+						<!-- <h6 class="card-text">+91 7499174856</h6> -->
+						<!-- <a href="#" class="btn btn-primary"></a> -->
+						<div class="btn1">
+							<a href="/personalinfo" class="btm1"><i class="fa-solid fa-user"></i>My
+								Profile</a>
+							<a class="btm1" href="/addaddress">My Address</a>
+							<a class="btm1"href="/wishlist">Whishlist</a>
+							<a class="btm1" href="/myorderlist">Orderlist</a>
+							<a class="btm1"href="/about">About us</a>
+							<a class="btm1"href="/logouts">Logout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="div1">
+				<div class="l">
+					<label for="fullname">Name:</label>
+					<input type="text" id="fullname" value="{{data.fullname}}"name="fullname" placeholder="Enter your full name" required>
+
+					<label for="mobile2">Mobile number:</label>
+					<input type="text" id="mobile2"value="{{data.mobile2}}" name="mobile2" placeholder="Enter your mobile number" required>
+
+					<label for="pincode">Pincode:</label>
+					<input type="text" id="pincode" value="{{data.pincode}}"name="pincode" placeholder="Enter your pincode" required>
+
+					<label for="address">Address:</label>
+					<textarea id="address" name="address" placeholder="Enter your full address" required>{{data.address}}</textarea>
+
+					<label for="city">City:</label>
+					<input type="text" id="city" value="{{data.city}}"name="city" placeholder="Enter your city" required>
+
+
+					<label for="state">State:</label>
+					<select id="state"value="{{data.state}}" name="state" required>
+						<option value="" disabled="">--Select State--</option>
+						<option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option>
+						<option value="Andhra Pradesh">Andhra Pradesh</option>
+						<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+						<option value="Assam">Assam</option>
+						<option value="Bihar">Bihar</option>
+						<option value="Chandigarh">Chandigarh</option>
+						<option value="Chhattisgarh">Chhattisgarh</option>
+						<option value="Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu">Dadra &amp; Nagar Haveli &amp;
+							Daman
+							&amp; Diu</option>
+						<option value="Delhi">Delhi</option>
+						<option value="Goa">Goa</option>
+						<option value="Gujarat">Gujarat</option>
+						<option value="Haryana">Haryana</option>
+						<option value="Himachal Pradesh">Himachal Pradesh</option>
+						<option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option>
+						<option value="Jharkhand">Jharkhand</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Ladakh">Ladakh</option>
+						<option value="Lakshadweep">Lakshadweep</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Maharashtra">Maharashtra</option>
+						<option value="Manipur">Manipur</option>
+						<option value="Meghalaya">Meghalaya</option>
+						<option value="Mizoram">Mizoram</option>
+						<option value="Nagaland">Nagaland</option>
+						<option value="Odisha">Odisha</option>
+						<option value="Puducherry">Puducherry</option>
+						<option value="Punjab">Punjab</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Tripura">Tripura</option>
+						<option value="Uttarakhand">Uttarakhand</option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="West Bengal">West Bengal</option>
+					</select>
+					<div class="btn2">
+						<button type="submit" class="save">Save</button>
+						<button type="button" class="can" href="">Cancel</button>
+
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>{% endblock body %}

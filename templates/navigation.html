@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static custom_tags %}
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    {% comment %} <link  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"  rel="stylesheet"  type='text/css'> {% endcomment %}
+</head>
+{% comment %} style="background-image:url({%static 'plus.png'%})"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+<body >
+    <nav>
+        <div class="logo">
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/grocery-logo_fb537a.svg"
+            {% comment %} <img "style="background-color=white"src="{% static 'grocery.jpg'%}"
+              {% endcomment %}
+                width="75px" height="20px">
+            <!-- <a class="n">Mart</a> -->
+            <!-- <a class="n" >Grocery Mart </a>  -->
+            <p>
+                exlusive
+                <span class="plus-color">products</span>
+                <img src="{% static 'plus.png'%}" width="12px" height="12px">
+            </p>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search a product">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="Recentsearch">
+                <div class="Recentsearchlist">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <p>Atta</p>
+                </div>
+                <p class="discoverMore">Discover More</p>
+                <div class="Recentsearchlistdiscover">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <p>Masoor</p>
+                </div>
+                <div class="Recentsearchlistdiscover">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <p>Noodles</p>
+                </div>
+                <div class="Recentsearchlistdiscover">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <p>Sugar</p>
+                </div>
+                <div class="Recentsearchlistdiscover">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <p>Besan</p>
+                </div>
+                <div class="Recentsearchlistdiscover">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <p>Maida</p>
+                </div>
+            </div>
+        </div>
+        {% if  request.user.is_authenticated %}
+            <button href="/personalinfo" class="signup"><i class="fa-solid fa-cart-shopping-fast"></i>My Profile
+                <div class="HoverLogin">
+                    <div class="triangle-up"></div>
+                    <div class="loginMenu">
+                        <a href="/personalinfo"><div class="menuList">
+                            <img src="{% static 'user.png'%}" width="20px" height="20px">
+                            <p>My Profile</p>
+                        </div></a>
+                        <a href="/myorderlist"><div class="menuList">
+                            <img src="{% static 'checkout.png'%}" width="20px" height="20px">
+                            <p>My Orders</p>
+                        </div></a>
+                        <a href="/wishlist"><div class="menuList">
+                            
+                            <img src="{% static 'like.png'%}" width="20px" height="20px">
+                            <p>Whishlist</p>
+                        </div></a>
+                        <a href="/about"><div class="menuList">
+                            
+                            <img src="{% static 'ab.png'%}" width="20px" height="20px">
+                            <p>About</p>
+                        </div></a>
+                        <a href="/logouts"><div class="menuList">
+                            
+                            <img src="{% static 'log-out.png'%}" width="20px" height="20px">
+                            <p>Logout</p>
+                    
+                        </div></a>
+                       
+                    </div>
+                </div></button>
+            <a href="/addaddress" class="NavLink"><i class="fa-solid fa-location-dot"></i> Delivery to 425001</a>
+            <a href="/cart" class="NavLink">Cart</a>
+        {% else %}
+            <a class="signup" href="/logins">Login
+             
+
+
+            </a>
+           
+        
+
+           
+        
+        
+        
+            
+       {% endif %}
+    </nav>
+
+    {% block body%}
+    {% endblock body%}
+{% for i in messages%}
+<script>
+    alert('{{i}}')
+</script>
+{% endfor%}
+
+{% comment %} {% for i in toast%}
+<script>
+    alert('{{i}}')
+</script>
+{% endfor%} {% endcomment %}
+
+
+</body>
+
+</html>
